@@ -4,6 +4,7 @@ using namespace std;
 // Function declaration
 int getSum(vector<int> vector1);
 float getAverage(vector<int> vector1);
+int getMin(vector<int> vector1);
 
 // Main function
 int main()
@@ -11,6 +12,7 @@ int main()
   vector<int> vector1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
   cout << "The sum of the numbers is: " << getSum(vector1) << endl;
   cout << "The average of the numbers is: " << getAverage(vector1) << endl;
+  cout << "The minimum of the numbers is: " << getMin(vector1) << endl;
   return 0;
 }
 
@@ -32,4 +34,16 @@ float getAverage(vector<int> vector1)
     sum += vector1[i];
   }
   return (sum / vector1.size());
+}
+int getMin(vector<int> vector1)
+{
+  int min = vector1[0];
+  for (int i = 0; i < vector1.size(); i++)
+  {
+    if (vector1[i] < min)
+    {
+      min = vector1[i];
+    }
+  }
+  return min;
 }
